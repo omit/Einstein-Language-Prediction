@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Einstein_Access_Token</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Einstein Access Token</shortDescription>
+        <value>Token here</value>
+    </labels>
+    <labels>
+        <fullName>Einstein_Intent_Model_Id</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Einstein Intent Model Id</shortDescription>
+        <value>7BBV7O3U26HL7KD3FJXKMCSUNM</value>
+    </labels>
+    <labels>
+        <fullName>Einstein_Sentiment_Model_Id</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Einstein Sentiment Model Id</shortDescription>
+        <value>CommunitySentiment</value>
+    </labels>
+</CustomLabels>

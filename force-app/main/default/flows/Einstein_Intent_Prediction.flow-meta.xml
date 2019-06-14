@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Einstein_Intent_Prediction_Plugin</name>
+        <label>Einstein Intent Prediction Plugin</label>
+        <locationX>382</locationX>
+        <locationY>387</locationY>
+        <actionName>EinsteinLanguagePlugin</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Prediction_Result</targetReference>
+        </connector>
+        <inputParameters>
+            <name>isIntent</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sampleText</name>
+            <value>
+                <elementReference>Text_for_intent_prediction</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>result</assignToReference>
+            <name>result</name>
+        </outputParameters>
+    </actionCalls>
+    <interviewLabel>Einstein Intent Prediction {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Einstein Intent Prediction</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Einstein_Intent_Prediction</name>
+        <label>Einstein Intent Prediction</label>
+        <locationX>176</locationX>
+        <locationY>261</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Einstein_Intent_Prediction_Plugin</targetReference>
+        </connector>
+        <fields>
+            <name>Text_for_intent_prediction</name>
+            <fieldText>Text for intent prediction</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Prediction_Result</name>
+        <label>Prediction Result</label>
+        <locationX>790</locationX>
+        <locationY>387</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ShowResult</name>
+            <fieldText>{!Text_for_intent_prediction}
+
+{!result}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Einstein_Intent_Prediction</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>result</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
